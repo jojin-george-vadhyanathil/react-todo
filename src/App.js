@@ -15,7 +15,7 @@ function App() {
       </div>
       <div className="input">
         <input onChange={(e)=>setTodo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
-        <i onClick={()=>setTodos([...todos,{text:todo}])} className="fas fa-plus"></i>
+        <i onClick={()=>setTodos([...todos,{text:todo,status:false}])} className="fas fa-plus"></i>
       </div>
       <div className="todos">
       {todos.map(obj=>{
@@ -23,7 +23,10 @@ function App() {
       return(
         <div className="todo">
           <div className="left">
-            <input type="checkbox" name="" id="" />
+            <input onChange={(e)=>{
+              console.log(e.target.checked)
+              console.log(obj)
+            }} value={obj.status} type="checkbox" name="" id="" />
             <p>{obj.text}</p>
           </div>
           <div className="right">
