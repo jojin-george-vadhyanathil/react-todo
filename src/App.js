@@ -41,6 +41,7 @@ function App() {
             <i onClick={()=>setTodos(todos.filter(obj3=>{
               if(obj3.id===obj.id){
                obj3=null
+               console.log('deleted')
               }
               return obj3
             }))} className="fas fa-times"></i>
