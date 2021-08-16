@@ -47,7 +47,14 @@ function App() {
             }))} className="fas fa-times"></i>
           </div>
         </div>)
-        })}  
+        })} 
+
+        {todos.map(obj=>{
+          if(obj.status){
+            return(<h1>{obj.text}</h1>)
+          }
+        return null
+        })} 
       </div>
     </div>
   );
